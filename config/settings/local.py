@@ -1,6 +1,8 @@
 from .base import *
-from settings import LOCAL_DATABASES
+from settings import DATABASES
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
-DATABASES = LOCAL_DATABASES
+DEBUG = True
+
+DATABASES = DATABASES
