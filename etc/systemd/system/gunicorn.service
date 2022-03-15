@@ -1,0 +1,15 @@
+[Unit]
+Description=gunicorn daemon
+After=network.target
+
+[Service]
+User=mysite
+Group=www-data
+WorkingDirectory=/home/ec2-user/mysite
+ExecStart=/home/ec2-user/miniconda3/envs/mysite/bin/gunicorn \
+        --workers 1 \
+        --bind unix:/tmp/gunicorn.sock \
+        config.wsgi:application
+
+[Install]
+WantedBy=multi-user.target
